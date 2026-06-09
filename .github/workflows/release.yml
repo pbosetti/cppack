@@ -100,7 +100,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: package-${{ matrix.id }}
-          path: build/*.zip
+          path: build/*.tar.gz
           if-no-files-found: error
 
   release:
@@ -111,7 +111,7 @@ jobs:
 
     steps:
       - name: Download packages
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: package-*
           path: dist
