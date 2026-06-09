@@ -41,12 +41,12 @@ jobs:
             platform: ""
             osx_architectures: ""
 
-          - name: macOS x86_64
-            id: macos-x86_64
-            runner: macos-13
-            generator: Ninja
-            platform: ""
-            osx_architectures: ""
+          # - name: macOS x86_64
+          #   id: macos-x86_64
+          #   runner: macos-13
+          #   generator: Ninja
+          #   platform: ""
+          #   osx_architectures: ""
 
           - name: macOS arm64
             id: macos-arm64
@@ -59,9 +59,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install Ninja and Catch2 (macOS)
+      - name: Install Catch2 (macOS)
         if: runner.os == 'macOS'
-        run: brew install ninja catch2
+        run: brew install catch2
 
       - name: Install Ninja (Linux)
         if: runner.os == 'Linux'
